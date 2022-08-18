@@ -1,0 +1,73 @@
+body{
+    background: url(imagenes/flyers.gif)no-repeat center center fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.logo{
+    
+    margin-top: 10px;
+    width: 30%;
+}
+.pregunta{
+    color: #ffffff;
+    font-size: 55px;
+    margin-bottom: 75px;
+}
+.plataformas{
+    
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px;
+    
+}
+.plataformas li{
+    background:  #292626 ;
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border:  2px solid black;
+    border-radius: 10px;
+}
+.plataformas li:hover{
+    border-color: #bcffe7;
+}
+.plataformas li:active{
+    border-color:  #c3f3ff ;
+}
+.plataformas h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.plataformas li:hover h2{
+    font-size: 33px;
+    
+}
+.dispositivo{
+    width: 60%;
+}
+.plataformas-descripcion{
+    font-size: 18px;
+    color: #ffffff;
+}
+.plataformas-precio{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+@media(max-width: 600px){
+
+    #jugar{
+        width: 40%;
+    }
+
+}

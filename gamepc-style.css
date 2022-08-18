@@ -1,0 +1,219 @@
+body{
+    background: url(imagenes/city.gif)no-repeat center center fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+header{
+    background: url(imagenes/header.png);
+    padding: 20px 0;
+    text-align: center;
+}
+.logo{
+    width: 20%;
+}
+.caja{
+    width: 940px;
+    position:relative;
+    margin: 0 auto;
+
+}
+.contestar{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 200px;
+    border: none;
+    text-align: center;
+    display: inline;
+    width: 55px;
+
+}
+.enviar{
+    position: absolute;
+    margin-top: 240px;
+    margin-left: 165px;
+    width: 10%;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background:   #cd6aff ;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor:pointer;
+    
+}
+.enviar:hover{
+    background:#ae0efe;
+    transform: scale(1.20) rotate(3deg);
+    
+}
+#reinicio{
+    position: absolute;
+    margin-top: 280px;
+    margin-left: 240px;
+    width: 10%;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background:#51dcd9;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor:pointer;
+    
+}
+#reinicio:hover{
+    background: #2ca9a7 ;
+    transform: scale(1.20) rotate(3deg);
+    
+}
+#agregar{
+    position: absolute;
+    margin-top: 280px;
+    margin-left: 90px;
+    width: 10%;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #fde940;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor:pointer;
+    
+}
+#agregar:hover{
+    background:  #e1cd25  ;
+    transform: scale(1.20) rotate(3deg);
+    
+}
+
+
+#lienzo{
+    margin: 0 auto;
+    text-align: center;
+}
+#test{
+    
+    background: rgb(000,000,000,0%);
+
+}
+footer{
+    text-align: center;
+    background: url(imagenes/Footer.png);
+    padding: 40px;
+}
+
+.social {
+    display: flex;
+  }
+
+.link {
+              text-decoration: none;
+              color: #b7b7b7;
+              margin: 10px;
+              width: 50px;
+              height: 50px;
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              background: rgb(28, 28, 28);
+              border-radius: 10px;
+              position: relative;
+              transition: 0.4s;
+          }
+          .link:hover {
+              transform: rotate(25deg);
+          }
+          .link::before {
+              content: " ";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              background: #373737;
+              border-radius: 10px;
+              transition: opasity 0.2s;
+          }
+          .link:hover::before {
+              opacity: 0.4;
+          }
+          .link:nth-child(1)::before {
+              background: #c32aa3;
+          }
+          .link:nth-child(2)::before {
+              background: #1da1f2;
+          }
+          .link:nth-child(3)::before {
+              background: #e42727;
+          }
+          .link:nth-child(4)::before {
+              background: #0a66c2;
+          }
+          .link:hover::before {
+              transform: translate(-4px, -4px);
+              filter: blur(10px);
+          }
+          .link i {
+              font-size: 1.7em;
+              transition: all 0.4s;
+          }
+          .link:hover i {
+              color: #c8c8c8;
+            transform: rotate(-25deg);
+          }
+          .link:hover i.instagram {
+              color: #c32aa3;
+          }
+          #insta{
+            width:50px;
+          }
+          .link:hover i.twitter {
+              color: #1da1f2;
+          }
+          #twitter{
+            width:50px;
+          }
+          .link:hover i.youtube {
+              color: #b41616;
+          }
+          #youtube{
+            width:50px;
+          }
+          .link:hover i.linkedin {
+              color: #0a66ca;
+          }
+          #linkedin{
+            width:50px;
+          }
+          
+.copyright{
+    color: #ffffff;
+    font-size: 13px;
+    margin: 20px;
+}
+@media(max-width: 600px){
+    h1{
+        text-align: center;
+    }
+
+    nav{
+        position: static;
+    }
+    .caja{
+        width:auto;
+    }
+    #lienzo{
+        scale: 0.5;
+    }
+
+}

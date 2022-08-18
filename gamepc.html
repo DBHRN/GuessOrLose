@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang = "es">
+    <head>
+        <meta charset = "UTF - 8">
+        <meta name="viewport" content="width = device-width">
+        <title>GuessOrLose</title>
+        <link rel="stylesheet"  href="reset.css">
+        <link rel="stylesheet"  href="gamepc-style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    </head>
+
+    <body>
+        <header>
+            <div class="caja">
+                <h1><img class="logo" src="imagenes/Logo.png" alt="Logo de GuessOrLose"></h1>
+                </div>
+        </header>
+        <main>
+            <section class="fondo-principal">
+                <input class="contestar" placeholder="Letra">
+                <button class="enviar">enviar</button>
+                <button onclick="updatescreen();" id="reinicio" >¡Juega otra vez!</button>
+                <button onclick="addword();" id="agregar">¡Agrega más palabras!</button>
+
+                <div id="lienzo">
+                    <canvas id="test" width="1200" height="800"></canvas>
+                    <script>
+
+                        var pantalla = document.querySelector("canvas");
+                        var pincel = pantalla.getContext("2d");
+                        document.getElementById("reinicio").style.display = 'none';
+                        document.getElementById("agregar").style.display = 'none';
+                        
+                        palabras = ["VAQUERO","ZORRO","AGUILA","CRUZ","ESPIA","POLICIA","BAILE","MUSICA","ALIANZA","ANGEL","APOCALIPSIS","ALMA","COMIDA","FELICIDAD","EXODO","GLORIA","GRACIA","ALEMANIA","NORUEGA","ISRAEL","JUICIO","JUSTICIA","LEY","LUZ","ARBOL","MILAGRO","VIDA","NUMEROS","PADRE","HIJO","PERDON","RICO","POBRE","REINO","PRINCIPE","SABIDURIA","FIDELIDAD","VENADO","MEDICINA","GUERRA","JINETE","LANZA","PISTOLA","SOLDADO","SOL","LUNA","PRINCESA","REINA","SUPERHEROE","PODER","ALAS","PIZZA","HAMBURGUESA","MALTEADA","SUSHI","MARISCOS","CEVICHE","TAMALES","CHILE","TACOS","TRUFA","OBSTACULO","PUERTA","HOGAR","FUEGO","LOBO","LEON","OJO","CABEZA","PIES","HIGADO","CORAZON","PULMONES","RELOJ","CELULAR","COMPUTADORA","INTERNET","VIDEOJUEGOS","PROGRAMACION","GUITARRA","PIANO","BATERIA","TROMPETA","CANTANTE","PASTOR","IGLESIA","CARTA","BIBLIA","TELEVISION","CODIGO","CALCULADORA","HOLOGRAMA","ALGORITMO","MISION","MAGIA","PASION","DIVERSION","VIOLIN","AUDIFONOS","TECLADO","NEGOCIO","HELADO","DIMENSION"]
+                        function aleatorio() {
+        
+                        return Math.round(Math.random() * palabras.length);
+                        
+                        }
+
+                        
+                        function square(x,y,color) {
+                        
+                            pincel.fillStyle = color;
+                            pincel.fillRect(x,y,80,3);
+
+                            pincel.strokeStyle = "black";
+                            pincel.strokeRect(x,y,80,3);
+
+                        }
+                        var palabracompleta = palabras[aleatorio()];
+                        var letras = palabracompleta.split("")
+
+                        
+                        function escribirTexto(x , y, texto, color, size) {
+                        
+                        pincel.font=size;
+                        pincel.fillStyle=color;
+                        pincel.fillText(texto, x, y);
+                    }   var x = 15;
+                        function wordchoice(){
+                        palabracompleta = palabras[aleatorio()];
+                        console.log(palabracompleta)
+                        letras = palabracompleta.split("")
+                        for(var posicion = 0; posicion < letras.length; posicion++){
+                            square(x,700,"#ffffff");
+                            x = x + 100;
+                            }
+                        
+                        }
+                        wordchoice();
+                        horca();
+                        var numero = 1;
+                        var points = 0;
+                        var intentos = 6;
+                        function horca(){
+                            pincel.fillStyle= "white";
+                            pincel.fillRect(295,80, 10, 60);
+                            pincel.strokeStyle="black";
+                            pincel.strokeRect(295,80, 10, 60);
+
+                            pincel.fillStyle= "white";
+                            pincel.fillRect(90,70, 240, 10);
+                            pincel.strokeStyle="black";
+                            pincel.strokeRect(90,70, 240, 10);
+
+                            pincel.fillStyle= "white";
+                            pincel.fillRect(90,70, 10, 500);
+                            pincel.strokeStyle="black";
+                            pincel.strokeRect(90,70, 10, 500);
+
+                            pincel.fillStyle= "white";
+                            pincel.fillRect(40,560, 240, 10);
+                            pincel.strokeStyle="black";
+                            pincel.strokeRect(40,560, 240, 10);
+                        }
+                        function cabeza() {
+                            pincel.fillStyle = "black";
+                            pincel.beginPath();
+                            pincel.arc(300, 200, 65, 0, 2*3.14);
+                            pincel.fill();
+                            pincel.fillStyle = "white";
+                            pincel.beginPath();
+                            pincel.arc(300, 200, 50, 0, 2*3.14);
+                            pincel.fill();
+                        }
+                        function torso() {
+                            pincel.fillStyle= "white";
+                            pincel.fillRect(285,265, 30, 185);
+                            pincel.strokeStyle="black";
+                            pincel.strokeRect(285,265, 30, 185);
+                        }
+                        function brazoleft(){
+                            pincel.fillStyle = "white"
+                            pincel.beginPath();
+                            pincel.moveTo(285, 280);
+                            pincel.lineTo(225, 340);
+                            pincel.lineTo(225, 360);
+                            pincel.lineTo(285, 300);
+                            pincel.moveTo(285, 280);
+                            pincel.fill();
+                        }
+                        function brazoright(){
+                            pincel.fillStyle = "white"
+                            pincel.beginPath();
+                            pincel.moveTo(315, 280);
+                            pincel.lineTo(375, 340);
+                            pincel.lineTo(375, 360);
+                            pincel.lineTo(315, 300);
+                            pincel.moveTo(315, 280);
+                            pincel.fill();
+                        }
+                        function piernaleft(){
+                            pincel.fillStyle = "white"
+                            pincel.beginPath();
+                            pincel.moveTo(285, 430);
+                            pincel.lineTo(225, 490);
+                            pincel.lineTo(225, 510);
+                            pincel.lineTo(285, 450);
+                            pincel.moveTo(285, 430);
+                            pincel.fill();
+                        }
+                        function piernaright(){
+                            pincel.fillStyle = "white"
+                            pincel.beginPath();
+                            pincel.moveTo(315, 430);
+                            pincel.lineTo(375, 490);
+                            pincel.lineTo(375, 510);
+                            pincel.lineTo(315, 450);
+                            pincel.moveTo(315, 430);
+                            pincel.fill();
+                        }
+                        var outString = 0;
+                        function eliminarespeciales(Letras){
+                
+                            const outString = Letras.replace(/[`~¡!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+                            return outString;
+                        }
+                        function eliminarnumeros(Numeros){
+                
+                            const outString = Numeros.replace(/\d/g, '');
+                            return outString;
+                        }
+                        const nuevaStr = 0;
+                        function inputfiltro(texto){
+                            outString = texto;
+                            outString = outString.toUpperCase();
+                            outString2 = eliminarespeciales(outString)
+                            outString3 = eliminarnumeros(outString)
+                            
+                            return outString3;
+                    }
+                    var respuestasmalas = [""];
+                    var respuestasbuenas = [""];
+
+                        function verificar() {
+                        respuesta = input.value;
+                        respuesta = inputfiltro(respuesta);
+                        var encontrado = false;
+                        
+                        
+                        for (var posicion = 0; posicion < letras.length; posicion++) {
+                            
+                            if (respuesta == letras[posicion]) {
+                                x = 25;
+                                x = x + (100 * posicion);
+                                encontrado = true;
+                                escribirTexto(x , 700, respuesta,"white","70px Georgia");
+                                points++
+                                    //respuestasbuenas.push(respuesta);
+                                
+                                    }
+                                }
+                            if (respuesta == "") {
+                                intentos++;
+                            }
+                            
+                            if (encontrado == false) {
+                                x = 40 * numero;
+                                
+                                
+                                    for (var posicion = 0; posicion < respuestasmalas.length; posicion++) {
+                                        if (respuesta == respuestasmalas[posicion]) {
+                                            console.log("repetido");
+                                            console.log(posicion)
+                                            break;
+                                        }
+                                    }
+                                        if (respuesta != respuestasmalas[posicion]){
+                                            escribirTexto(x , 750, respuesta,"red","40px Georgia");
+                                            numero = numero + 1;
+                                            intentos = intentos - 1;
+                                            respuestasmalas.push(respuesta);
+                                            
+                                        }
+                                
+                                    }
+                            if (intentos == 5) {
+                                cabeza();
+                            }
+                            if (intentos == 4) {
+                                torso();
+                            }
+                            if (intentos == 3) {
+                                piernaleft();
+                            }
+                            if (intentos == 2) {
+                                piernaright();
+                            }
+                            if (intentos == 1) {
+                                brazoleft();
+                            }
+                            
+                            input.value = "";
+                            input.focus();
+                            console.log(respuestasmalas);
+                            if (intentos == 0) {
+                                brazoright();
+                                escribirTexto(400 , 300, "Haz perdido"," #f8c1c1 ","35px Georgia");
+                                escribirTexto(400 , 350, "la palabra era:", "#f8c1c1" ,"35px Georgia");
+                                escribirTexto(400 , 400, palabracompleta, "#f8c1c1" ,"35px Georgia");
+                                document.getElementById("reinicio").style.display = '';
+                                document.getElementById("agregar").style.display = '';
+                                
+                            }
+                            
+                            
+                            if (points >= letras.length) {
+                                escribirTexto(400 , 300, "¡Felicidades","#c2ffb1","35px Georgia");
+                                escribirTexto(400 , 350, "haz terminado!","#c2ffb1","35px Georgia");
+                                document.getElementById("reinicio").style.display = '';
+                                document.getElementById("agregar").style.display = '';
+                            }
+                            
+                        }
+                    
+                        function updatescreen(){
+                        pincel.clearRect(0, 0, 1200, 800);
+                        points = 0;
+                        intentos = 6;
+                        x = 15;
+                        respuestasmalas = [""];
+                        respuestasbuenas = [""];
+                        input.value = "";
+                        input.focus();
+                        document.getElementById("reinicio").style.display = 'none';
+                        document.getElementById("agregar").style.display = 'none';
+                        wordchoice();
+                        horca();
+                        }
+                        function addword(){
+                            var palabranueva = prompt("Ingresa la nueva palabra")
+                            palabranueva = inputfiltro(palabranueva);
+                            palabras.push(palabranueva)
+                            console.log(palabras)
+                        }
+                        var input = document.querySelector("input");
+                        input.focus();
+                        var button = document.querySelector(".enviar");          
+                        button.onclick = verificar;
+                        
+                    </script>
+                </div>
+            </section>
+        </main>
+        <script>
+
+
+
+        </script>
+        <footer>
+            <img src="imagenes/Logoblanco.png" class="logo" alt="Logo de SpyLetter">
+            <div class="socialmedia">
+                <a href="https://www.instagram.com/susy_diaz73/" class="link">
+                  <img class="fa-brands fa-instagram instagram"> <img id="insta" src="imagenes/insta.jpg"></i>
+              </a>
+              <a href="https://twitter.com/dbhrnf" class="link">
+                  <img class="fa-brands fa-twitter twitter"> <img id="twitter" src="imagenes/twitter.png"></img>
+              </a>
+              <a href="https://www.youtube.com/channel/UC0TDqzbyJ_4RWAOPCg_9isw" class="link">
+                  <img class="fa-brands fa-youtube youtube"> <img id="youtube" src="imagenes/youtube.png"></img>
+              </a>
+              <a href="https://www.linkedin.com/in/susy-diaz/" class="link">
+                  <img class="fa-brands fa-linkedin linkedin"> <img id="linkedin" src="imagenes/linkedin.jpg"></img>
+              </a>
+                </div>
+            <p class="copyright">&copy Copyright GuessOrLose - 2022</p>
+        </footer>
+
+    </body>
+
+</html>
