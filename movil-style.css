@@ -21,18 +21,7 @@ header{
     margin: 0 auto;
 
 }
-/*.caja2{
-    width: 940px;
-    position:relative;
-    margin-bottom: 700px;
-    margin-left: -250px;
-}*/
-nav{
-    position: absolute;
-    top: 20px;
-    right: 0;
-    margin-left: -100px;
-}
+
 nav li{
     display: inline;
     margin: 0 0 0 15px;
@@ -41,20 +30,20 @@ nav li{
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px;
     font-size: 22px;
-    position: relative;
-    margin-top: 410px;
-    margin-left: 0px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -230px;
     border: none;
     text-align: center;
     display: inline;
-    width: 55px;
+    width: 18%;
+    
 
 }
 .enviar{
-    position: relative;
-    margin-top: 450px;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -50px;
     width: 40%;
     padding: 5px 0;
     font-size: 18px;
@@ -73,8 +62,9 @@ nav li{
     
 }
 #reinicio{
-    position: relative;
-    margin-bottom: 20px;
+    position: absolute;
+    margin-top: 110px;
+    margin-left: -230px;
     width: 60%;
     padding: 5px 0;
     font-size: 18px;
@@ -93,7 +83,9 @@ nav li{
     
 }
 #agregar{
-    position: relative;
+    position: absolute;
+    margin-top: 65px;
+    margin-left: -230px;
     width: 60%;
     padding: 5px 0;
     font-size: 18px;
@@ -123,7 +115,7 @@ nav li{
 
 }
 footer{
-    margin-top: 100px;
+    margin-top: 250px;
     text-align: center;
     background: url(imagenes/footer.png);
     padding: 40px;
@@ -222,14 +214,8 @@ footer{
         text-align: center;
     }
 
-    nav{
-        position: static;
+    .caja, header, footer{
+        width: auto;
     }
-    .caja{
-        width:auto;
-    }
-    #lienzo{
-        scale: 0.5;
-    }
-
+    
 }

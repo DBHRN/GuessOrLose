@@ -216,7 +216,7 @@
                                     }
                                 }
                                     if (respuesta != respuestasmalas[posicion]){
-                                        escribirTexto(x , 400, respuesta,"red","20px Georgia");
+                                        escribirTexto(x , 400, respuesta,"red","28px Georgia");
                                         numero = numero + 1;
                                         intentos = intentos - 1;
                                         respuestasmalas.push(respuesta);
@@ -245,9 +245,9 @@
                         console.log(respuestasmalas);
                         if (intentos == 0) {
                             brazoright();
-                            escribirTexto(200 , 150, "Haz perdido"," #f8c1c1 ","17.5px Georgia");
-                            escribirTexto(200 , 175, "la palabra era:", "#f8c1c1" ,"17.5px Georgia");
-                            escribirTexto(200 , 200, palabracompleta, "#f8c1c1" ,"17.5px Georgia");
+                            escribirTexto(200 , 150, "Haz perdido"," #f8c1c1 ","35px Georgia");
+                            escribirTexto(200 , 175, "la palabra era:", "#f8c1c1" ,"35px Georgia");
+                            escribirTexto(200 , 200, palabracompleta, "#f8c1c1" ,"35px Georgia");
                             document.getElementById("reinicio").style.display = '';
                             document.getElementById("agregar").style.display = '';
                             
@@ -255,8 +255,8 @@
                         
                         
                         if (points >= letras.length) {
-                            escribirTexto(200 , 150, "¡Felicidades","#c2ffb1","17.5px Georgia");
-                            escribirTexto(200 , 175, "haz terminado!","#c2ffb1","17.5px Georgia");
+                            escribirTexto(200 , 150, "¡Felicidades","#c2ffb1","35px Georgia");
+                            escribirTexto(200 , 175, "haz terminado!","#c2ffb1","35px Georgia");
                             document.getElementById("reinicio").style.display = '';
                             document.getElementById("agregar").style.display = '';
                         }
@@ -272,8 +272,8 @@
                     respuestasbuenas = [""];
                     input.value = "";
                     input.focus();
-                    document.getElementById("reinicio").style.display = 'none';
-                    document.getElementById("agregar").style.display = 'none';
+                    //document.getElementById("reinicio").style.display = 'none';
+                    //document.getElementById("agregar").style.display = 'none';
                     wordchoice();
                     horca();
                     }
