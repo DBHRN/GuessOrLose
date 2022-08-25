@@ -54,11 +54,10 @@ body{
 .dispositivo{
     width: 60%;
 }
-.plataformas-descripcion{
-    font-size: 18px;
+.plataformas p{
     color: #ffffff;
 }
-.plataformas-precio{
+.plataformas-clic{
     font-size: 30px;
     font-weight: bold;
     margin-top: 10px;
@@ -66,8 +65,17 @@ body{
 
 @media(max-width: 600px){
 
-    #jugar{
-        width: 40%;
+    .plataformas{
+
+        width: auto;
+
+    }
+
+    .plataformas li{
+
+        margin-bottom: 30px;
+        width: 100%;
+
     }
 
 }

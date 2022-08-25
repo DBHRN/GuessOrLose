@@ -36,6 +36,13 @@ body{
 
     #jugar{
         width: 40%;
+        margin-top: 300px;
     }
-
+    .logo{
+        position: static;
+        margin: 0px auto;
+        margin-top: 100px;
+        width: 100%;
+        display: grid;
+    }
 }
