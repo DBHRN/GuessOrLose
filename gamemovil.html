@@ -246,8 +246,8 @@
                         if (intentos == 0) {
                             brazoright();
                             escribirTexto(200 , 150, "Haz perdido"," #f8c1c1 ","35px Georgia");
-                            escribirTexto(200 , 175, "la palabra era:", "#f8c1c1" ,"35px Georgia");
-                            escribirTexto(200 , 200, palabracompleta, "#f8c1c1" ,"35px Georgia");
+                            escribirTexto(200 , 195, "la palabra era:", "#f8c1c1" ,"35px Georgia");
+                            escribirTexto(200 , 240, palabracompleta, "#f8c1c1" ,"35px Georgia");
                             document.getElementById("reinicio").style.display = '';
                             document.getElementById("agregar").style.display = '';
                             
@@ -264,7 +264,7 @@
                     }
                 
                     function updatescreen(){
-                    pincel.clearRect(0, 0, 400, 800);
+                    pincel.clearRect(0, 0, 1200, 400);
                     points = 0;
                     intentos = 6;
                     x = 7.5;
@@ -272,8 +272,8 @@
                     respuestasbuenas = [""];
                     input.value = "";
                     input.focus();
-                    //document.getElementById("reinicio").style.display = 'none';
-                    //document.getElementById("agregar").style.display = 'none';
+                    document.getElementById("reinicio").style.display = 'none';
+                    document.getElementById("agregar").style.display = 'none';
                     wordchoice();
                     horca();
                     }
